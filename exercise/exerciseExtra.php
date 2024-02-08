@@ -114,3 +114,4 @@ foreach ($movies as $movie) {
 
 echo "<pre>";
 var_dump($favourite_movies);
+
