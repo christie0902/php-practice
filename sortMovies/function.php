@@ -21,3 +21,7 @@ function sortMovies($movies, $sort_by, $sort_way = 'asc')
  
     return $movies;
 }
+
+$sorted_by_title_alphabetically = sortMovies($movies, 'title', 'asc');
+$sorted_by_rating_from_best = sortMovies($movies, 'rating', 'desc');
+$sorted_from_oldest = sortMovies($movies, 'year');

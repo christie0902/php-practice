@@ -2,11 +2,14 @@
 require 'data.php';
 require_once 'function.php';
 
-$sort_by = $_GET['sortby'] ?? null;
-$sort_way = $_GET['sortway'] ?? null;
-if ($sort_by !== null && $sort_way !== null) {
-    $movies = sortMovies($movies, $sort_by, $sort_way);
-}
+$sort_by = $_GET['sortby'] ?? 'title'; //add default value to remove if condition
+$sort_way = $_GET['sortway'] ?? 'asc';
+
+$movies = sortMovies($movies, $sort_by, $sort_way);
+
+// if ($sort_by !== null && $sort_way !== null) {
+//     $movies = sortMovies($movies, $sort_by, $sort_way);
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
