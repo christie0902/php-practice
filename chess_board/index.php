@@ -1,48 +1,55 @@
 <?php
 $row_length = 8;
 $row_number = 8;
+$urlKing = [
+    'url' =>'https://classes.codingbootcamp.cz/assets/classes/33/pieces/whites/king.png',
+    'column' => 1,
+    'row' => 3
+];
+$urlQueen = [
+    'url' => 'https://classes.codingbootcamp.cz/assets/classes/33/pieces/whites/queen.png',
+    'column' => 5,
+    'row' => 7
+];
+$pieces = [
+    0 => $urlKing,
+    1 => $urlQueen,
+];
 
-function renderRowWhite ($row_length)
-{
-    for ($i = 0; $i < $row_length; $i++) {
-        if ($i % 2 == 0) {
-            echo '<div class="white"></div>';
-        } else {
-            echo '<div class="black"></div>';
-        }
-    }
-};
+// function renderRow($row_length, $isWhite)
+// {
+         //$isWhite is either 0 or 1 > line starts with white or not
+//     for ($i = 0; $i < $row_length; $i++) {
+//         if (($i + $isWhite) % 2 == 0) {
+//             echo '<div class="white"></div>';
+//         } else {
+//             echo '<div class="black"></div>';
+//         }
+//     }
+// }
 
-function renderRowBlack($row_length) 
+function renderRow($row_length, $thisRow, $pieces)
 {
+    $isWhite = $thisRow % 2;
     for ($i = 0; $i < $row_length; $i++) {
-        if ($i % 2 == 0) {
-            echo '<div class="black"></div>';
+
+       foreach($pieces as $piece) {
+        if($piece['row'] == $thisRow && $piece['column'] == $i){
+            $pieceImg = "<img src='{$piece['url']}'/>";
+        break;
+        }else{
+            $pieceImg = "";
+        };
+       };
+
+        if (($i + $isWhite) % 2 == 0) {
+            echo "<div class='white'>$pieceImg</div>";
         } else {
-            echo '<div class="white"></div>';
+            echo "<div class='black'>$pieceImg</div>";
         }
+
     }
 }
-
-// function renderBoard($row_length, $isWhite)
-// {
-//     echo '<div class="row">';
-//     for($i = 0; $i < ($row_length ** 2); $i++){
-        
-//         if ($i % 2 == 0) {
-//             if($isWhite == true)
-//             {echo '<div class="white"></div>';} 
-//             else 
-//             {echo '<div class="black"></div>';
-//             if($i % $row_length === 0 && $i == $row_length ** 2) {echo '</div>';} else {echo '</div><div class="row">';};};
-//         } else {
-//             if($isWhite == true)
-//             {echo '<div class="black"></div>';}
-//             else 
-//             {echo '<div class="white"></div>';
-//                 if($i % $row_length === 0 && $i == $row_length ** 2) {echo '</div>';} else {echo '</div><div class="row">';};};
-//         };
-//     };}
 
 ?>
 <!DOCTYPE html>
@@ -55,17 +62,24 @@ function renderRowBlack($row_length)
 </head>
 <body>
 <div class="board">
-    <?php for ($i=0;$i<$row_number;$i+=2) :?>
+    <?php for ($i = 0; $i < $row_number; $i++) : ?>
         <div class="row">
-        <?php renderRowWhite ($row_length);?>
+            <?php renderRow($row_length,$i,$pieces);?>
         </div>
-        <div class="row">
-        <?php renderRowBlack ($row_length);?>
-        </div>
-        
     <?php endfor ?>
 
-    <!-- <?php renderBoard($row_length, true); ?> -->
+
+
+
+
+    <!-- <?php for ($i = 0; $i < $row_number; $i++) : ?>
+        <div class="row">
+            $determine if $i is even or odd ( 0 or 1 )
+            <?php renderRow($row_length, $i % 2);?>
+        </div>
+    <?php endfor ?> -->
+
 </div>
 </body>
 </html>
+
