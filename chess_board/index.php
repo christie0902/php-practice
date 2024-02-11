@@ -71,7 +71,6 @@ function renderRow($row_length, $thisRow, $pieces)
 
 
 
-
     <!-- <?php for ($i = 0; $i < $row_number; $i++) : ?>
         <div class="row">
             $determine if $i is even or odd ( 0 or 1 )
