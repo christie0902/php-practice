@@ -32,6 +32,11 @@ function isHealthy($temperature, $unit = 'c')
 
 isHealthy(100,'f');
 
+//ternary operator
+$number=42;
+function evenOrOdd($number)
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
