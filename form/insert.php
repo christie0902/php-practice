@@ -10,4 +10,6 @@ $song->length = $_POST['length'] ?? $song->length;
 $song->album = $_POST['album'] ?? $song->album;
 
 $id = insert($song);
+
+//inform the user
 echo 'Song added with the ID' . $id;
