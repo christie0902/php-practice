@@ -1,1 +1,37 @@
-{"1":{"id":1,"first_name":"Onna","last_name":"Koko","year_of_birth":1996,"genre":"Pop"},"2":{"id":2,"first_name":"Maya","last_name":"Anami","year_of_birth":2002,"genre":"Hiphop"},"3":{"id":3,"first_name":"Taylor","last_name":"Swi","year_of_birth":1989,"genre":"Country"},"4":{"id":4,"first_name":"Lily","last_name":"Lala","year_of_birth":1922,"genre":"Rock"},"5":{"id":5,"first_name":"Lily","last_name":"Lala","year_of_birth":1922,"genre":"Rock"}}
+{
+  "1": {
+    "id": 1,
+    "first_name": "Onna",
+    "last_name": "Koko",
+    "year_of_birth": 1996,
+    "genre": "Pop"
+  },
+  "2": {
+    "id": 2,
+    "first_name": "Maya",
+    "last_name": "Anami",
+    "year_of_birth": 2002,
+    "genre": "Hiphop"
+  },
+  "3": {
+    "id": 3,
+    "first_name": "Taylor",
+    "last_name": "Swi",
+    "year_of_birth": 1989,
+    "genre": "Country"
+  },
+  "4": {
+    "id": 4,
+    "first_name": "Lily",
+    "last_name": "Lala",
+    "year_of_birth": 1922,
+    "genre": "Rock"
+  },
+  "5": {
+    "id": 5,
+    "first_name": "Lily",
+    "last_name": "Lala",
+    "year_of_birth": 1922,
+    "genre": "Rock"
+  }
+}
