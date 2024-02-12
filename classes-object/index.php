@@ -5,10 +5,10 @@ require_once 'Album.php';
 
 
 $author = new Author;
-$song1 = new Song(22, 2003, 1.5);
+$song1 = new Song(22, 2003, 3);
 $song2 = new Song('Love Story', 2000, 3);
-$song3 = new Song('Bad Blood', 2013, 2.5);
-$song4 = new Song('Blank Space', 2018, 3.5);
+$song3 = new Song('Bad Blood', 2013, 2);
+$song4 = new Song('Blank Space', 2018, 3);
 
 $author->name = 'Taylor Swift';
 $author->picture = 'https://static01.nyt.com/images/2022/10/24/arts/24taylor-notebook3/24taylor-notebook3-superJumbo.jpg';
