@@ -18,9 +18,8 @@
         <?php foreach($album->songs as $song) :?>
         <li>
             Title: <?=$song->title?> - <?=$song->release_year?>;
-            <?php $totalPlayTime += $song->length; ?>
         </li>
         <?php endforeach ?>
-        <h4>Play time: <?=$totalPlayTime?></h4>
+        <h4>Play time: <?=$album->calculateLength()?></h4>
     </ul>
 </body>
