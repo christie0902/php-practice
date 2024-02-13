@@ -58,3 +58,4 @@ if ($id) {
     header('Location: edit.php');
     exit();
 }
+
