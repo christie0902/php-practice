@@ -36,6 +36,7 @@ if (!$valid) {
     session()->flashRequest();
     if ($id) {
         header('Location: edit.php?id=' .$id);
+        exit();
     }else {
         header('Location: edit.php');
         exit();
@@ -49,13 +50,13 @@ $album->release_year = intval($_POST['release_year']) ?? $album->release_year;
 
 if ($id) {
     update($id, $album);
-    $_SESSION['success_message'] = 'Album with ID ' . $id . 'successfully updated';
+    $_SESSION['success_message'] = $album->title . 'with the ID' . $id . 'successfully updated';
     header('Location: edit.php?id=' .$id);
     exit();
 } else {
     $id = insert($album);
-    $_SESSION['success_message'] = 'Album inserted with ID ' . $id;
-    header('Location: edit.php');
+    $_SESSION['success_message'] = 'The album ' . $album->title . ' was inserted with ID ' . $id;
+    header('Location: list.php');
     exit();
 }
 

@@ -32,13 +32,6 @@ if ($id) {
     <?php endforeach; ?>
 <?php endif; ?>
 
-<!-- Display Success message -->
-<?php if (session()->get('success_message')) : ?>
-    <div class="success-message">
-        <?= session()->get('success_message') ?>
-    </div>
-<?php endif; ?>
-
 <!-- Display form -->
 <?php if ($id) : ?>
     <form action="save.php?id=<?= $id ?>" method="post">
