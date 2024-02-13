@@ -58,6 +58,7 @@ $song = new Song;
  <br>
 
  <button type="submit">Submit</button>
+ <input type="reset" value="Clear">
 
 </form>
 </body>
