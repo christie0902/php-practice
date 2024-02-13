@@ -1,7 +1,9 @@
 <?php
-session_start();
-require_once 'DBBlackbox.php';
-require_once 'Song.php';
+
+require_once 'bootstrap.php';
+
+// $success_message = session()->get('success_message');
+// $errors = session()->get('errors');
 
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];

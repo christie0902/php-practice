@@ -1,7 +1,5 @@
 <?php
-session_start();
-require_once 'DBBlackbox.php';
-require_once 'Song.php';
+require_once 'bootstrap.php';
 
 $id= $_GET['id'] ?? null;
 if(!$id) {

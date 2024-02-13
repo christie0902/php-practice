@@ -1,7 +1,8 @@
 <?php
+
 require_once 'bootstrap.php';
 
-$valid= true;
+$valid = true;
 $errors = [];
 
 if (empty($_POST['name'])) {
@@ -15,28 +16,29 @@ if (empty($_POST['author'])) {
 }
 
 if (!$valid) {
-    // session()-> flash('errors', $errors);
-    // session()-> flash('errors', $errors)
+    session()->flash('errors', $errors);
+    session()->flashRequest();
 
-    $_SESSION['errors'] = $errors;
-    $_SESSION['request_data'] = $_POST;
-    header('location:create.php');
+    header('Location: create.php');
     exit();
 }
 
+
+// prepare an empty entity
 $song = new Song;
 
+// update name property from request if it is there, or no change
 $song->name = $_POST['name'] ?? $song->name;
 $song->author = $_POST['author'] ?? $song->author;
 $song->length = $_POST['length'] ?? $song->length;
 $song->album = $_POST['album'] ?? $song->album;
 
+// insert into DB and get ID
 $id = insert($song);
 
-//inform the user
-$_SESSION['success_message'] = 'Song #' . $id . ' successfully inserted';
+// inform the user (to be updated)
+$_SESSION['success_message'] = 'Song inserted with ID ' . $id;
 
-
-//redirect to edit form for this song
-header('location: edit.php?id=' . $id);
+// redirect the user to edit form for this song
+header('Location: edit.php?id=' . $id);
 exit();
