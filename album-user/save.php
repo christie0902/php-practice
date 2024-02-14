@@ -50,12 +50,12 @@ $album->release_year = intval($_POST['release_year']) ?? $album->release_year;
 
 if ($id) {
     update($id, $album);
-    $_SESSION['success_message'] = $album->title . 'with the ID' . $id . 'successfully updated';
+    session()->flash('success_message', $album->title . 'with the ID' . $id . 'successfully updated');
     header('Location: edit.php?id=' .$id);
     exit();
 } else {
     $id = insert($album);
-    $_SESSION['success_message'] = 'The album ' . $album->title . ' was inserted with ID ' . $id;
+    session()->flash('success_message', 'The album ' . $album->title . ' was inserted with ID ' . $id);
     header('Location: list.php');
     exit();
 }

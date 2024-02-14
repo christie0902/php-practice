@@ -1,8 +1,9 @@
 <?php
 require_once 'bootstrap.php';
+
 $albums = select(null,null, 'Album');
 ?>
-<h1>LIST OF ALBUMS</h1>
+<h1>LIST OF ALBUMS AAA</h1>
 <ul>
     <!-- Display success message -->
      <?php if (session()->get('success_message')) : ?>
