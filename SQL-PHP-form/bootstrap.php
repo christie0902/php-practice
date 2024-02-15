@@ -7,5 +7,5 @@ require_once 'Session/helpers.php';
 require_once 'Session/Session.php';
 
 DB::connect('localhost', 'world', 'root', '');
-
+ 
 session();

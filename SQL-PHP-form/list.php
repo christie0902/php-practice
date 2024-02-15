@@ -6,7 +6,7 @@ $query = '
 SELECT *
 FROM `countries`
 ORDER BY `name` ASC
-LIMIT 0, 20
+LIMIT 30, 20
 ';
 $countries = DB::select($query, [], 'Country');
 ?>
@@ -19,13 +19,16 @@ $countries = DB::select($query, [], 'Country');
 </head>
 <body>
     <h1>List of Countries</h1>
+    <a href="edit.php">ADD COUNTRY</a>
     <table>
         <ul>
             <?php foreach ($countries as $country) :?>
                 <li>
-                    <?= $country->name ?><br>
-                    Population <?=$country->formatPopulation ()?><br>
-                    Capital: <?=$country->getCapitalCity ()->name ?>
+                    <h3><?= $country->name ?></h3>
+                    Continent: <?=$country->continent?><br>
+                    Region: <?=$country->region?><br>
+                    Population: <?=$country->formatPopulation ()?><br>
+                    <a href="edit.php?id=<?=$country->id?>">Edit</a>
                 </li>
             <?php endforeach?>
         </ul>

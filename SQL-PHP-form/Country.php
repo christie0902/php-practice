@@ -1,12 +1,12 @@
 <?php
 class Country {
-    public $id = null;
-    public $code = null;
-    public $code_alpha2 = null;
-    public $name = null;
-    public $continent = null;
-    public $continent_id = null;
-    public $region = null;
+    public ?int $id = null;
+    public $code = 'NA';
+    public $code_alpha2 = 'NA';
+    public ?string $name = null;
+    public ?string $continent = null;
+    public ?string $continent_id = null;
+    public ?string $region = null;
     public $surface_area = null;
     public $population = null;
     public $gnp = null;
@@ -30,5 +30,11 @@ class Country {
         ]);
 
         return $city;
+    }
+//in case you want to check if the code is present when the data is set to unique
+    function code_is_not_present($code){
+
+        $sql = "SELECT `code` FROM `countries` WHERE `code` = $code";
+        return $bool;
     }
 }
