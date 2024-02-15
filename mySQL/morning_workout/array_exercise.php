@@ -47,4 +47,13 @@ foreach ($old_array as $data)
     $persons[] = $person;
 }
 
+// $persons = array_map(function($data) {
+//     $person = new Person;
+//     $person->first_name = $data['name'];
+//     $person->last_name = $data['surname'];
+//     $person->job = $data['occupation'];
+//     return $person;
+// }, $old_array);
+
+
 var_dump($persons);
