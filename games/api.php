@@ -11,3 +11,4 @@ $games = DB::select($query, [], '') ;
 
 header('Content-Type: application/json');
 echo json_encode($games);
+exit;
