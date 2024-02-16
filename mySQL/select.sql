@@ -101,3 +101,17 @@ TRUNCATE TABLE `users`;
 --DROP
 DROP TABLE `region`
 --remove the table completely
+
+
+--JOIN
+SELECT `cities`.`name` AS 'City_name', `cities`. `population` AS 'City_population', `countries` . `name` AS 'Country_name'
+FROM `cities`
+LEFT JOIN `countries` ON `cities`.`country_id` = `countries`.`id`
+WHERE `cities`.`population` > 5000000
+
+--JOIN
+SELECT `countries`.`name` AS 'Country',`languages` . `name` AS 'Language'
+FROM `country_language`
+LEFT JOIN `languages` ON `languages`.`id` = `country_language`.`language_id`
+LEFT JOIN `countries` ON `country_language`.`country_id` = `countries`.`id`
+WHERE `languages`.`name` = 'English';
