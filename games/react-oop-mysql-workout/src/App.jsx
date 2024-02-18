@@ -1,7 +1,11 @@
-import { List } from "./List/List";
+import ListPage from "./Components/ListPage.jsx";
 
 function App() {
-  return <List url="http://www.cbp-exercises.test/games/api.php" />;
+  return (
+    <>
+      <ListPage />
+    </>
+  );
 }
 
 export default App;

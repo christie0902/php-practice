@@ -9,12 +9,4 @@ class Dice {
     public function roll() {
         return rand(1, $this->sides);
     }
-
-    public function getSides() {
-        return $this->sides;
-    }
-
-    public function setSides($sides) {
-        $this->sides = $sides;
-    }
 }

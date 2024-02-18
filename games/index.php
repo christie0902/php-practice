@@ -2,6 +2,9 @@
 require_once 'bootstrap.php';
 DB::connect('localhost', 'games', 'root', '');
 
+
+
+
 $query = "SELECT *
 FROM `games`";
 
@@ -18,8 +21,13 @@ try{
     echo $e;
 }
 
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: http://localhost:5173');
+echo json_encode($games);
+exit;
+
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,4 +49,4 @@ try{
         </div>
     <?php endforeach ?>
 </body>
-</html>
+</html> -->
