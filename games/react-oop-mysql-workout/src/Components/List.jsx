@@ -4,10 +4,10 @@ import { Game } from "../Game/Game";
 export const List = (props) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const baseURL = "http://www.cbp-exercises.test/games";
+  const baseURL = "http://www.cbp-exercises.test/games/index.php";
   let query = `?sortby=${props.sortBy}&sortway=${props.sortWay}`;
   if (!props.sortBy || !props.sortWay) {
-    query = "/";
+    query = "";
   }
 
   const loadData = () => {

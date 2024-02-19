@@ -23,6 +23,12 @@ const ListPage = () => {
       <button value={"name_desc"} onClick={(e) => handleSort(event)}>
         Sort name from Z to A
       </button>
+      <button value={"rating_asc"} onClick={(e) => handleSort(event)}>
+        Sort rating from the lowest
+      </button>
+      <button value={"rating_desc"} onClick={(e) => handleSort(event)}>
+        Sort rating from the highest
+      </button>
       <List sortBy={sortBy} sortWay={sortWay} />
     </>
   );
