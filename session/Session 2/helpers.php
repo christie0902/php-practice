@@ -1,5 +1,6 @@
 <?php
 
+use XT\Tools\Session;
 /**
  * "helper" functions that simplify accessing methods of classes
  */

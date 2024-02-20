@@ -1,5 +1,6 @@
 <?php
 
+namespace XT\Tools;
 /**
  * class to represent the session and provide simple
  * and straightforward ways to work with it

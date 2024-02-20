@@ -3,8 +3,6 @@ require_once 'bootstrap.php';
 DB::connect('localhost', 'games', 'root', '');
 
 
-
-
 $query = "SELECT *
 FROM `games`";
 
